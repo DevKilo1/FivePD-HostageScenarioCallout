@@ -1,0 +1,107 @@
+﻿{
+  "Locations": [
+    {
+      "name": "Vinewood Blvd",
+      "coords": {
+      "x": 265.25430297852,
+      "y": 153.88340759277,
+      "z": 104.58506011963,
+      "w": 321.27682495117
+    }
+    }
+  ],
+  "EnableAI": false,
+  "EnableComeback": true,
+  "AnonymousErrorReporting": true,
+  "EnablePlayerReporting": true,
+  "What_Is_Comeback?": "The AI can only run on one instance of the callout at a time. If comeback is enabled, the callout will automatically disable AI and continue without it instead of force ending the callout.",
+  "AI-Disclaimer": "You need to install the provided AI resource in order for the above 'EnableAI' to work. Other than that, it works straight out of the box! :D",
+  "What_Is_Player_Reporting": "Enabling this option will enable a command that players can use to report issues directly to the developers of this callout. The command is /kiloreport [message]",
+  "Note": "For negotiation options, the success points is a simple points system. If the player selects the wrong thing to say, points will be deducted. For example, if the option's points is set to -1 then it will only deduct 1 point. 0 points has no effect, and of course positive numbers have an effect.",
+  "PointsToSucceed": 10,
+  "NegotiationOptions": [
+    {
+      "SuccessPoints": -2,
+      "Repeatable": false,
+      "ButtonText": "Heeeeyyyyy buddyyyyy, what's going on?", 
+      "Dialogue": [
+        "~f~Officer~s~: Heeeeyyyyy buddyyyyy, what's going on?",
+        "~r~Suspect~s~: I'm not happy, my needs are to be met. OR THIS PERSON GETS IT!"  
+      ]
+    },
+    {
+      "SuccessPoints": -1,
+      "Repeatable": false,
+      "ButtonText": "You want a popsicle?",
+      "Dialogue": [
+        "~f~Officer~s~: You want a popsicle?",
+        "~r~Suspect~s~: I'm sorry, I don't take bribes. *wink*. TAKE ME SERIOUSLY"  
+      ]
+    },
+    {
+      "SuccessPoints": 0,
+      "Repeatable": false,
+      "ButtonText": "How can we get the hostage to safety right now?",
+      "Dialogue": [
+        "~f~Officer~s~: How can we get the hostage to safety right now?",
+        "~r~Suspect~s~: I want a brand new car"  
+      ]
+    },
+    {
+      "SuccessPoints": -1,
+      "Repeatable": true,
+      "ButtonText": "What do you want?",
+      "Dialogue": [
+        "~f~Officer~s~: What do you want?",
+        "~r~Suspect~s~: I want a brand new car! Any car."  
+      ]
+    },
+    {
+      "SuccessPoints": 5,
+      "Repeatable": false,
+      "ButtonText": "So... How's your day?",
+      "Dialogue": [
+        "~f~Officer~s~: So... How's your day?",
+        "~r~Suspect~s~: Not too well, my mother just kicked me out. How was your day officer?"
+      ]
+    },
+    {
+      "SuccessPoints": 5,
+      "Repeatable": false,
+      "ButtonText": "It's been pretty busy out here, ...",
+      "Dialogue": [
+        "~f~Officer~s~: It's been pretty busy out here, you're not my first brush with death today.",
+        "~r~Suspect~s~: Oh, cool... Well, I think I'll let this guy go. Thank you for showing me kindness today, here's $100!",
+        "~f~Officer~s~: Whoa! $100! I'm so lucky I got blessed with a kindness content creator!!!"
+      ]
+    },
+    {
+      "SuccessPoints": 10,
+      "Repeatable": false,
+      "ButtonText": "You know, if you let this man go home to ...",
+      "Dialogue": [
+       "~f~Officer~s~: You know, if you let this man go home to his family tonight we can go fishing together. Just you and I.",
+       "~r~Suspect~s~: REALLYYY?? I WOULD LOVE THAT!",
+       "~f~Officer~s~: Oh yeah! Definitely. Just let the hostage go and we can go this weekend!"
+     ] 
+    },
+    {
+      "SuccessPoints": -3,
+      "Repeatable": false,
+      "ButtonText": "I'm taking you veerrrry seriously right now.",
+      "Dialogue": [
+        "~f~Officer~s~: I'm taking you veerrrry seriously right now.",
+        "~r~Suspect~s~: What the hell is that supposed to mean?"
+      ] 
+    },
+    {
+      "SuccessPoints": -6,
+      "Repeatable": false,
+      "ButtonText": "You won't kill him! Pssshhhttt...",
+      "Dialogue": [
+        "~f~Officer~s~: You won't kill him! Pssshhhttt...",
+        "~r~Suspect~s~: Hell yeah I will! You want to see?"
+      ]
+    }
+  ]
+}
