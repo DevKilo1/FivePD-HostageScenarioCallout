@@ -27,6 +27,7 @@ public class HostageCallout : Callout
     private List<string> messageQueue = new List<string>();
     private bool willingToKill = true;
     public static bool EnableAI = false;
+    public static bool calloutActive = false;
     
     private async Task WaitForCalloutLoad()
     {
@@ -339,6 +340,7 @@ public class HostageCallout : Callout
     {
         BaseScript.TriggerServerEvent("FIVEPD::KiloAIHostageCallout:CalloutBegin",selectedLocation.X,selectedLocation.Y,selectedLocation.Z);
         InitBlip();
+        calloutActive = true;
         try {
             suspect = await Utils.SpawnPedOneSync(Utils.GetRandomPed(), Location, true, selectedLocation.W);
             victim =
@@ -424,6 +426,7 @@ public class HostageCallout : Callout
 
     public override void OnCancelBefore()
     {
+        calloutActive = false;
         BaseScript.TriggerServerEvent("FIVEPD::KiloAIHostageCallout:CalloutEnd",selectedLocation.X,selectedLocation.Y,selectedLocation.Z);
         if (suspect != null)
             suspect.Detach();
@@ -466,6 +469,7 @@ public class script : BaseScript
                 (source, args, rawCommand) =>
                 {
                     if (HostageCallout.EnableAI) return;
+                    if (!HostageCallout.calloutActive) return;
                     _menu.Visible = !_menu.Visible;
                 }), false);
             API.RegisterKeyMapping("-openKiloHostageCalloutNegotiationsMenu", "Opens Kilo Hostage Callout Menu", "keyboard",
